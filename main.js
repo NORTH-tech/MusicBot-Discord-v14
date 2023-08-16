@@ -1,22 +1,21 @@
 //module-loading
-const { Client, GatewayIntentBits, REST, Routes } = require("discord.js")
+const { Client, GatewayIntentBits ,Collection ,REST, Routes } = require("discord.js")
+const { Player } = require("discord-player")
 const { readdirSync } = require('fs');
+const glob = require("glob")
 require('dotenv').config();
 
 //create-client
 const client = new Client({
     intents: Object.values(GatewayIntentBits).filter(Number.isInteger)
 });
-
-//client-event-loading
-const events = readdirSync(`./events`).filter(files => files.endsWith('.js'));
-for (const file of events) {
-    const event = require(`./events/${file}`);
-    client.on(file.split('.')[0], event.bind(null, client))
-};
+client.developper = process.env.developper
+client.panels = new Map()
+client.checked = require("./utils/checked")
+client.say = require("./utils/say")
 
 //set-slashCommands
-const rest = new REST({version: "10"}).setToken(process.env.token)
+const rest = new REST({ version: "10" }).setToken(process.env.token)
 const commandsFiles = readdirSync("./commands/slash").filter(f => f.endsWith(".js"))
 const commands = []
 for (const file of commandsFiles) {
@@ -24,9 +23,28 @@ for (const file of commandsFiles) {
     commands.push(command.data.toJSON());
 }
 (async () => {
-    await rest.put(Routes.applicationCommands(process.env.clientid), { body: commands });
+    await rest.put(Routes.applicationCommands(process.env.clientid, "827923843121020978"), { body: commands });
     console.log("success commands register")
 })();
+
+
+
+//player-setting
+const player = Player.singleton(client)
+player.extractors.loadDefault()
+
+
+//client&player/event-loading
+const eventFiles = glob.sync("./events/**/*.js");
+for (const file of eventFiles) {
+    const event = require(`./${file}`)
+    const [folder, type, eventname] = file.split("\\")
+    if (type === "bot") {
+        client.on(eventname.split('.')[0], event.bind(null, client))
+    } else if (type == "player") {
+        player.events.on(eventname.split('.')[0], event.bind(null, client))
+    }
+};
 
 
 //login-discordbot
