@@ -23,7 +23,7 @@ for (const file of commandsFiles) {
     commands.push(command.data.toJSON());
 }
 (async () => {
-    await rest.put(Routes.applicationCommands(process.env.clientid, "827923843121020978"), { body: commands });
+    await rest.put(Routes.applicationCommands(process.env.clientid, "1058818532982407169"), { body: commands });
     console.log("success commands register")
 })();
 

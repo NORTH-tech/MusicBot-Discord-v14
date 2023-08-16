@@ -9,6 +9,16 @@ async function track_embed(track) {
         .setAuthor({ name: "🎵Now Playing!!🎵" })
         .setTitle(track.title)
         .setDescription(track.description) 
+        .addFields([
+            {
+                name: "RequestedBy",
+                value: track.requestedBy.username
+            },
+            {
+                name: "duration",
+                value: track.duration
+            }
+        ])
         .setImage(track.thumbnail)
         .setFooter({iconURL: devicon, text: devname})
     return embed

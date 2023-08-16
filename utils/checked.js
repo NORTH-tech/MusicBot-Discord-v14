@@ -8,7 +8,7 @@ async function checkQueue(interaction) {
     }];
     const memberChannelId = interaction.member?.voice?.channelId;
     const queueChannelId = queue?.channel.id;
-    if (memberChannelId !== queueChannelId) return [false, {
+    if (memberChannelId != queueChannelId) return [false, {
         content: "```BOTと同じVCに接続してください。```",
         ephemeral: true,
     }];

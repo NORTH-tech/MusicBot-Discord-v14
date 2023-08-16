@@ -2,7 +2,7 @@ const { useMainPlayer, useQueue } = require("discord-player")
 
 module.exports = async (interaction, client) => {
     const channel = interaction.member.voice.channel;
-    if (!channel) return interaction.reply({ content: "You are not connected to a voice channel!", ephemeral: true }); // make sure we have a voice channel
+    if (!channel) return interaction.reply({ content: "ボイスチャンネルに参加してください。", ephemeral: true }); // make sure we have a voice channel
 
     // let's defer the interaction as things can take time to process
     await interaction.deferReply();
@@ -13,6 +13,7 @@ module.exports = async (interaction, client) => {
     const player = useMainPlayer();
     const queue = useQueue(interaction.guild.id);
     try {
+
         await player.play(channel, source, {
             nodeOptions: {
                 // nodeOptions are the options for guild node (aka your queue in simple word)
@@ -20,6 +21,7 @@ module.exports = async (interaction, client) => {
             }
         });
         return await interaction.deleteReply();
+
     } catch (e) {
         // let's return error if something failed
         return interaction.followUp(`Something went wrong: ${e}`);
