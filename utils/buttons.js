@@ -29,7 +29,7 @@ function panelbuttons_1() {
     const button_2 = new ActionRowBuilder()
         .addComponents(
             new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Secondary).setEmoji("🔀"),
-            new ButtonBuilder().setCustomId("repeat").setStyle(ButtonStyle.Secondary).setEmoji("🔂"),
+            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setEmoji("🚮"),
             new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setEmoji("🎵"),
             new ButtonBuilder().setCustomId("showqueue").setStyle(ButtonStyle.Secondary).setEmoji("📃"),
             new ButtonBuilder().setCustomId("disconnect").setStyle(ButtonStyle.Secondary).setEmoji("🚫"),
@@ -49,7 +49,7 @@ function panelbuttons_2() {
     const button_2 = new ActionRowBuilder()
         .addComponents(
             new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Secondary).setEmoji("🔀"),
-            new ButtonBuilder().setCustomId("repeat").setStyle(ButtonStyle.Secondary).setEmoji("🔂"),
+            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setEmoji("🚮"),
             new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setEmoji("🎵"),
             new ButtonBuilder().setCustomId("showqueue").setStyle(ButtonStyle.Secondary).setEmoji("📃"),
             new ButtonBuilder().setCustomId("disconnect").setStyle(ButtonStyle.Secondary).setEmoji("🚫"),
