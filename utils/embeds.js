@@ -20,7 +20,7 @@ async function track_embed(track) {
             }
         ])
         .setImage(track.thumbnail)
-        .setFooter({iconURL: devicon, text: devname})
+        .setFooter({iconURL: devicon, text: "develop by " + devname})
     return embed
 }
 
