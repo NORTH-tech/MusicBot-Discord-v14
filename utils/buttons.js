@@ -20,7 +20,7 @@ jump
 function panelbuttons_1() {
     const button_1 = new ActionRowBuilder()
         .addComponents(
-            new ButtonBuilder().setCustomId("replay").setStyle(ButtonStyle.Primary).setEmoji("↩"),
+            new ButtonBuilder().setCustomId("replay").setStyle(ButtonStyle.Danger).setEmoji("↩"),
             new ButtonBuilder().setCustomId("volumedown").setStyle(ButtonStyle.Success).setEmoji("🔉"),
             new ButtonBuilder().setCustomId("pause").setStyle(ButtonStyle.Danger).setEmoji("⏸"),
             new ButtonBuilder().setCustomId("volumeup").setStyle(ButtonStyle.Success).setEmoji("🔊"),
@@ -28,11 +28,9 @@ function panelbuttons_1() {
         )
     const button_2 = new ActionRowBuilder()
         .addComponents(
-            new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Secondary).setEmoji("🔀"),
-            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setEmoji("🚮"),
-            new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setEmoji("🎵"),
-            new ButtonBuilder().setCustomId("showqueue").setStyle(ButtonStyle.Secondary).setEmoji("📃"),
-            new ButtonBuilder().setCustomId("disconnect").setStyle(ButtonStyle.Secondary).setEmoji("🚫"),
+            new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Success).setEmoji("🔀"),
+            new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setLabel("音楽を追加"),
+            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setLabel("キューを削除"),
         )
     return [button_1, button_2]
 }
@@ -40,7 +38,7 @@ function panelbuttons_1() {
 function panelbuttons_2() {
     const button_1 = new ActionRowBuilder()
         .addComponents(
-            new ButtonBuilder().setCustomId("replay").setStyle(ButtonStyle.Primary).setEmoji("↩"),
+            new ButtonBuilder().setCustomId("replay").setStyle(ButtonStyle.Danger).setEmoji("↩"),
             new ButtonBuilder().setCustomId("volumedown").setStyle(ButtonStyle.Success).setEmoji("🔉"),
             new ButtonBuilder().setCustomId("resume").setStyle(ButtonStyle.Primary).setEmoji("▶"),
             new ButtonBuilder().setCustomId("volumeup").setStyle(ButtonStyle.Success).setEmoji("🔊"),
@@ -48,11 +46,9 @@ function panelbuttons_2() {
         )
     const button_2 = new ActionRowBuilder()
         .addComponents(
-            new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Secondary).setEmoji("🔀"),
-            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setEmoji("🚮"),
-            new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setEmoji("🎵"),
-            new ButtonBuilder().setCustomId("showqueue").setStyle(ButtonStyle.Secondary).setEmoji("📃"),
-            new ButtonBuilder().setCustomId("disconnect").setStyle(ButtonStyle.Secondary).setEmoji("🚫"),
+            new ButtonBuilder().setCustomId("shuffle").setStyle(ButtonStyle.Success).setEmoji("🔀"),
+            new ButtonBuilder().setCustomId("trackadd").setStyle(ButtonStyle.Secondary).setLabel("音楽を追加"),
+            new ButtonBuilder().setCustomId("delete").setStyle(ButtonStyle.Secondary).setLabel("キューを削除"),
         )
     return [button_1, button_2]
 }
