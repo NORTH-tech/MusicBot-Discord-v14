@@ -5,11 +5,11 @@ module.exports = async (interaction, client) => {
     if (!boolean) return await interaction.reply(queue)
     if (queue.node.isPaused()) {
         await interaction.deferUpdate()
-        return await client.say.wrong(interaction, "既に一時停止されています。")
+        return await client.say.wrong(interaction, "It has already been suspended.\n既に一時停止されています。")
     }
     await queue.node.pause()
     await interaction.update({
         components: panelbuttons_2()
     });
-    return await client.say.success(interaction, "一時停止しました。")
+    return await client.say.success(interaction, "Paused.\n一時停止しました。")
 }
