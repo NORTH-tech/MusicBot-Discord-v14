@@ -3,5 +3,5 @@ module.exports = async(interaction, client) => {
     if (!boolean) return await interaction.reply(queue)
     await interaction.deferUpdate()
     await queue.node.skip();
-    return await client.say.success(interaction, "トラックをスキップしました。")
+    return await client.say.success(interaction, "Skipped tracks.\nトラックをスキップしました。")
 }

@@ -7,7 +7,7 @@ module.exports = async (client, queue, track) => {
     if (msg) await msg.delete()
     const new_msg = await queue.metadata.channel.send({
         embeds: [
-            await track_embed(track)
+            track_embed(track)
         ],
         components: panelbuttons_1()
     });

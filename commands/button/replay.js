@@ -3,5 +3,5 @@ module.exports = async(interaction, client) => {
     if (!boolean) return await interaction.reply(queue)
     await interaction.deferUpdate()
     await queue.node.seek(0);
-    return await client.say.success(interaction, "現在の曲をはじめから再生します。")
+    return await client.say.success(interaction, "Play the current song from the beginning.\n現在の曲をはじめから再生します。")
 }
