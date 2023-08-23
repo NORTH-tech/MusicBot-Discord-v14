@@ -8,11 +8,11 @@ module.exports = async (client) => {
     global.devname = dev.username
     global.devicon = await dev.avatarURL()
 
-    setInterval(() => {
-        client.user.setActivity({
-            name: `How to use '/help'`
-        })
-    }, 10000)
+
+    client.user.setActivity({
+        name: `How to use '/help'`
+    })
+
 
     console.log("Bot is now online!!!")
 }
