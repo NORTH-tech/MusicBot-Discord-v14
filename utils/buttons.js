@@ -1,21 +1,5 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js")
 
-/*
-1volume up
-1volume down
-1pause
-11replay
-skip
-
-2shuffle
-2queue list show
-2track add
-m_queue delete
-remove
-2repeate
-jump
-2disconnect
-*/
 
 function panelbuttons_1() {
     const button_1 = new ActionRowBuilder()
