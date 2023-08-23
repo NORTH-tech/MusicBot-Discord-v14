@@ -1,6 +1,6 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js")
 
-
+//Default button
 function panelbuttons_1() {
     const button_1 = new ActionRowBuilder()
         .addComponents(
@@ -21,6 +21,7 @@ function panelbuttons_1() {
     return [button_1, button_2]
 }
 
+//Button when pause
 function panelbuttons_2() {
     const button_1 = new ActionRowBuilder()
         .addComponents(
