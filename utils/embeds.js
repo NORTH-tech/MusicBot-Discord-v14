@@ -72,6 +72,33 @@ function panel_help_embed() {
     return embed
 }
 
+function command_help_embed() {
+    const embed = new EmbedBuilder()
+        .setAuthor({ name: "command help" })
+        .setTitle("How to use slsh command")
+        .setColor(Colors.DarkOrange)
+        .setFooter({ iconURL: devicon, text: "develop by " + devname })
+        .addFields([
+            {
+                name: "/jump",
+                value: "`Skips the queue until the specified index.`\n`指定したインデックスまでキューをスキップします。`"
+            },
+            {
+                name: "/remove",
+                value: "`Deletes a track at the specified index in the queue.`\n`キュー内の指定したインデックスのトラックを削除します。`"
+            },
+            {
+                name: "/repeatmode",
+                value: "`Selects the playback mode for the song.`\n`楽曲の再生モードを選択します。`"
+            },
+            {
+                name: "/play",
+                value: "`Play the song. (YoutubeURL,YoutubePlaylist,SpotifyURL,Title)`\n`楽曲を再生します。(YoutubeURL,YoutubePlaylist,SpotifyURL,Title)`"
+            },
+        ])
+    return embed
+}
+
 function queue_embed(interaction, queue, multiple, page) {
     const maxPages = Math.ceil(queue.size / multiple);
     if (page < 1 || page > maxPages) page = 1;
@@ -86,7 +113,7 @@ function queue_embed(interaction, queue, multiple, page) {
         .setDescription(
             tracks.map(
                 (track, i) =>
-                    `${String(10*(page-1) + i + 1)}: [(URL)](${track.url})\n` + "```" + track.title + "```"
+                    `${String(10 * (page - 1) + i + 1)}: [(URL)](${track.url})\n` + "```" + track.title + "```"
             ).join("\n")
         )
     return embed
@@ -95,5 +122,6 @@ function queue_embed(interaction, queue, multiple, page) {
 module.exports = {
     track_embed,
     panel_help_embed,
+    command_help_embed,
     queue_embed
 }

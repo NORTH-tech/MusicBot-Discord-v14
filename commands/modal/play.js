@@ -8,7 +8,6 @@ module.exports = async (interaction, client) => {
     await interaction.deferReply({ ephemeral: true });
     const source = interaction.fields.getTextInputValue('input_source');
 
-    //https://open.spotify.com/intl-ja/track/2IS04ea4Zp1081lffiwiuL?si=7374417f9118408d
     const player = useMainPlayer();
     const queue = useQueue(interaction.guild.id)
     if (queue) {
