@@ -9,9 +9,8 @@ module.exports = async (client) => {
     global.devicon = await dev.avatarURL()
 
     setInterval(() => {
-        const size = client.guilds.cache.size
         client.user.setActivity({
-            name: `/help｜${size}server`
+            name: `How to use '/help'`
         })
     }, 10000)
 

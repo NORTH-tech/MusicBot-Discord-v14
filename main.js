@@ -1,5 +1,5 @@
 //module-loading
-const { Client, GatewayIntentBits ,Collection ,REST, Routes } = require("discord.js")
+const { Client, GatewayIntentBits, Collection, REST, Routes } = require("discord.js")
 const { Player } = require("discord-player")
 const { readdirSync } = require('fs');
 const glob = require("glob")
