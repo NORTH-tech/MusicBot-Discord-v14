@@ -7,7 +7,10 @@ require('dotenv').config();
 
 //create-client
 const client = new Client({
-    intents: Object.values(GatewayIntentBits).filter(Number.isInteger)
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildVoiceStates,
+    ]
 });
 client.developper = process.env.developper
 client.panels = new Map()
